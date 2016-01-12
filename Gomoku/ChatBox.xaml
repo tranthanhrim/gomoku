@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Height="300" Width="250">
-    <UserControl.Resources>
+             mc:Ignorable="d" Height="400" Width="250">
+    
+    <!--<UserControl.Resources>
         <RoutedUICommand x:Key="Send"/>
     </UserControl.Resources>
 
@@ -15,18 +16,27 @@
 
     <UserControl.InputBindings>
         <KeyBinding Key="Enter" Command="{StaticResource Send}"/>
-    </UserControl.InputBindings>
+    </UserControl.InputBindings>-->
 
     <Grid>
-        <ScrollViewer>
-            <TextBox Name="chatbox" TextWrapping="Wrap" Margin="0,0,0,40" IsReadOnly="True"/>
-        </ScrollViewer>
+        <Grid Height="42" VerticalAlignment="Top" HorizontalAlignment="Right" Width="250">
+            <Label Content="Your name:" FontWeight="Bold" Foreground="White"/>
+            <TextBox x:Name="txtusername" Margin="70,4,51,16" BorderThickness="0" Text="Player"/>
+        </Grid>
+        <Grid Margin="0,58,0,42">
+            <ScrollViewer ScrollChanged="ScrollViewer_ScrollChanged">
+                <TextBox Name="chatbox" TextWrapping="Wrap" IsReadOnly="True" BorderThickness="0" />
+            </ScrollViewer>
+        </Grid>
 
-        <TextBox Name="typebox" TextWrapping="Wrap" Height="40" VerticalAlignment="Bottom" Margin="0,0,45,0"/>
-        <Button Content="Send" Height="40" VerticalAlignment="Bottom" BorderThickness="0" Background="#FF3296FF" FontWeight="Bold" HorizontalAlignment="Right" Width="45" Click="Button_Click_1">
-            <Button.InputBindings>
-                <KeyBinding Command="{StaticResource Send}"/>
-            </Button.InputBindings>
-        </Button>
+        <Grid Height="38" VerticalAlignment="Bottom">
+            <TextBox Name="typebox" TextWrapping="Wrap" Margin="0,-2,48,0" TextChanged="typebox_TextChanged" BorderThickness="0"/>
+            <!--<Button Content="Send" BorderThickness="0" Background="#FF3296FF" FontWeight="Bold" Click="Button_Click_1" Margin="203,-2,0,0">
+                <Button.InputBindings>
+                    <KeyBinding Command="{StaticResource Send}"/>
+                </Button.InputBindings>
+            </Button>-->
+        </Grid>
+
     </Grid>
 </UserControl>

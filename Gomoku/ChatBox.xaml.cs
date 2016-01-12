@@ -25,26 +25,59 @@ namespace Gomoku
             InitializeComponent();
         }
 
-        public void send()
+        string _textChat;
+        public string TextChat
+        {
+            get { return _textChat; }
+            set { _textChat = value; }
+        }
+
+        /*public void send()
         {
             if (typebox.Text == null)
                 return;
 
-            String user = "YOU" + "\t" + DateTime.Now.ToString() + "\n";
+            String user = "YOU" + "\t\t\t"  + DateTime.Now.ToString("hh:mm:ss") + "\n";
 
             String content = chatbox.Text.ToString() + "\n";
 
             content += user;
             content += typebox.Text.ToString();
-            content += "\n..............................................................................\n";
+            content += "\n................................................................................\n";
             chatbox.Text = content;
             typebox.Clear();
+            
+        }*/
+
+        public void set(string name, string text)
+        {
+            string user = name;
+            for (int i = name.Length; i < 45; i++)
+            {
+                user += ' ';
+            }
+            user += DateTime.Now.ToString("hh:mm:ss") + "\n";
+
+            string content = chatbox.Text.ToString() + "\n";
+
+            content += user;
+            content += text;
+            content += "\n................................................................................\n";
+            chatbox.Text = content;
         }
 
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void typebox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            send();
+            _textChat = typebox.Text;
+        }
+
+        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            ScrollViewer sv = sender as ScrollViewer;
+            if (sv.VerticalOffset == sv.ScrollableHeight)
+            {
+                sv.ScrollToEnd();//debug breakpoint
+            }
         }
     }
 }
