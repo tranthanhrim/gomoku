@@ -1,35 +1,32 @@
-﻿<UserControl x:Class="WPF_Gomoku.ChatBox"
+﻿<UserControl x:Class="Gomoku.ChatBox"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="250">
-
-    
+             mc:Ignorable="d" Height="300" Width="250">
     <UserControl.Resources>
         <RoutedUICommand x:Key="Send"/>
     </UserControl.Resources>
-    
+
     <UserControl.CommandBindings>
         <CommandBinding Command="{StaticResource Send}" 
-                    Executed="Button_Click"/>
+                    Executed="Button_Click_1"/>
     </UserControl.CommandBindings>
-    
+
     <UserControl.InputBindings>
         <KeyBinding Key="Enter" Command="{StaticResource Send}"/>
     </UserControl.InputBindings>
-    
+
     <Grid>
         <ScrollViewer>
             <TextBox Name="chatbox" TextWrapping="Wrap" Margin="0,0,0,40" IsReadOnly="True"/>
         </ScrollViewer>
-        
+
         <TextBox Name="typebox" TextWrapping="Wrap" Height="40" VerticalAlignment="Bottom" Margin="0,0,45,0"/>
-        <Button Content="Send" Height="40" VerticalAlignment="Bottom" BorderThickness="0" Background="#FF3296FF" FontWeight="Bold" Click="Button_Click" HorizontalAlignment="Right" Width="45">
+        <Button Content="Send" Height="40" VerticalAlignment="Bottom" BorderThickness="0" Background="#FF3296FF" FontWeight="Bold" HorizontalAlignment="Right" Width="45" Click="Button_Click_1">
             <Button.InputBindings>
                 <KeyBinding Command="{StaticResource Send}"/>
-            </Button.InputBindings>         
+            </Button.InputBindings>
         </Button>
     </Grid>
 </UserControl>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WPF_Gomoku.Properties
+namespace Gomoku.Properties
 {
 
 

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_Gomoku
+namespace Gomoku
 {
     /// <summary>
     /// Interaction logic for ChatBox.xaml
@@ -41,7 +41,8 @@ namespace WPF_Gomoku
             typebox.Clear();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             send();
         }

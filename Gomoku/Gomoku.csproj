@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81C6F3CA-E903-4B04-A167-920B62E03DDD}</ProjectGuid>
+    <ProjectGuid>{B7CD6EC1-240D-4CAF-B103-607C1C05E2FD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WPF_Gomoku</RootNamespace>
-    <AssemblyName>WPF_Gomoku</AssemblyName>
+    <RootNamespace>Gomoku</RootNamespace>
+    <AssemblyName>Gomoku</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -53,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Player.cs" />
+    <Compile Include="Process.cs" />
     <Page Include="Board.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +109,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\background.png" />
+    <Resource Include="images\background1.png" />
+    <Resource Include="images\player1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\player2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\player1_1.png" />
+    <Resource Include="images\player2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\highlight1.png" />
+    <Resource Include="images\highlight2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\gomoku.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
